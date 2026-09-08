@@ -1,0 +1,3 @@
+from processors.fastlane.methods.purchase_stars import purchase_stars
+from processors.fastlane.methods.purchase_premium import purchase_premium
+from processors.fastlane.methods.topup_ton import topup_ton

@@ -1,0 +1,13 @@
+aiohttp
+httpx
+aiofiles
+asyncpg
+sqlalchemy
+fastapi
+uvicorn
+tonutils
+tonsdk
+greenlet
+environs
+pydantic
+kurigram
