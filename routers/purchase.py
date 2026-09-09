@@ -39,8 +39,8 @@ async def send_stars(msg: PurchaseRequest, req: Request):
     rate = await get_stars_rate(api_key=wallet.tonapi_key)
     ton_per_star = rate.get("ton_per_star")
     cost = (msg.currency * ton_per_star) + FRAGMENT_FEE + SYSTEM_COMM
-    # if user_api.balance < cost:
-    #     return HTTPException(status_code=402, detail='There is not enough balance to perform the operation')
+    if user_api.balance < cost:
+        return HTTPException(status_code=402, detail='There is not enough balance to perform the operation')
 
     logger.info("Choosing target wallet...")
     result = await get_free_wallet(cost, wallet_storage)
@@ -136,6 +136,7 @@ async def send_premium(msg: PurchaseRequest, req: Request):
 
 @router.post('/ton')
 async def send_ton(msg: PurchaseRequest, req: Request):
+    return "OK"
     db: DataBase = req.app.state.db
     wallet_storage: WalletStorage = req.app.state.wallet_storage
     queues: QueueManager = req.app.state.queue_manager
@@ -188,6 +189,7 @@ async def send_ton(msg: PurchaseRequest, req: Request):
 
 @router.post('/topup')
 async def topup_ton(msg: PurchaseRequest, req: Request):
+    return "OK"
     db: DataBase = req.app.state.db
     wallet_storage: WalletStorage = req.app.state.wallet_storage
     queues: QueueManager = req.app.state.queue_manager
