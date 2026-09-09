@@ -97,7 +97,7 @@ async def main():
     app.state.wallet_storage = wallet_storage
     app.state.queue_manager = queue_manager
 
-    uvicorn_config = uvicorn.Config(app, host='0.0.0.0', port=8090, log_level="info", log_config=LOGGING_CONFIG)  # ssl_keyfile='ssl/key.pem', ssl_certfile='ssl/cert.pem'
+    uvicorn_config = uvicorn.Config(app, host='0.0.0.0', port=8000, log_level="info", log_config=LOGGING_CONFIG)  # ssl_keyfile='ssl/key.pem', ssl_certfile='ssl/cert.pem'
     server = uvicorn.Server(uvicorn_config)
     try:
         await server.serve()
