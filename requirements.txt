@@ -2,10 +2,11 @@ aiohttp
 httpx
 aiofiles
 asyncpg
+apscheduler
 sqlalchemy
 fastapi
 uvicorn
-tonutils
+tonutils==0.5.3
 tonsdk
 greenlet
 environs
