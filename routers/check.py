@@ -25,10 +25,9 @@ async def check_premium(msg: CheckRequest, req: Request):
     app = Client(config.user_bot.account)
     try:
         async with app:
-            users = await app.get_users([msg.user_id])
+            users = await app.get_users([msg.username])
             for user in users:
                 return {
-                    'user_id': msg.user_id,
                     'is_premium': user.is_premium
                 }
     except Exception as err:

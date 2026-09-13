@@ -14,7 +14,7 @@ class PurchaseRequest(BaseModel):
 
 
 class CheckRequest(BaseModel):
-    user_id: int
+    username: str
 
 
 class DistributeRequest(BaseModel):
